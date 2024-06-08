@@ -12,7 +12,7 @@ const BookCreate = ({ onCreate }) => {
         setTitle('')
     }
   return (
-    <div className='absolute bottom-0 bg-orange-600 w-full h-[10%] text-white font-mono flex flex-col'>
+    <div className='absolute bottom-0 bg-orange-600 w-full text-white font-mono flex flex-col'>
         <div className='m-4'>
             <h3>Add books</h3>
             <form action="" onSubmit={handleSubmit} className='flex gap-3 text-3xl'>
