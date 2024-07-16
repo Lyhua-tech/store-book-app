@@ -1,8 +1,10 @@
 import React from 'react'
 
-const BookShow = () => {
+const BookShow = ({ book }) => {
   return (
-    <div>BookShow</div>
+    <div className='book-show'>
+      {book.title}
+    </div>
   )
 }
 
