@@ -12,13 +12,13 @@ const App = () => {
     ]
     setBooks(addBooks)
   }
-  // // function for remove book
-  // const removeBooks = (bookTitle) =>{
-  //   const rmBooks = books.filter(title => {
-  //     return title !== bookTitle;
-  //   })
-  //   setBooks(rmBooks)
-  // }
+  // function for remove book
+  const removeBooks = (id) =>{
+    const rmBooks = books.filter(title => {
+      return title.id !== id;
+    })
+    setBooks(rmBooks)
+  }
 
   // //
   // const modifyBooks = (id, newTitle) => {
@@ -32,7 +32,7 @@ const App = () => {
   // }
   return (
     <div>
-      <BookList books={books}/>
+      <BookList books={books} onDelete={removeBooks}/>
       <BookCreate onCreate={createBooks}/>
     </div>
   )
