@@ -1,15 +1,26 @@
-import {React , useState} from 'react'
+import {React , useState, useEffect} from 'react'
 import BookCreate from './components/BookCreate';
+import axios from 'axios';
 import BookList from './components/BookList';
 const App = () => {
   const [books, setBooks] = useState([]);
 
+  const fetchBooks = async () => {
+    const response = await axios.get('http://localhost:3001/books');
+
+    setBooks(response.data);
+  }
+
+  useEffect(() => {
+    fetchBooks();
+  }, [])
+
   // function for adding book into array
-  const createBooks = (title) =>{
-    const addBooks = [
-      {"id":Math.round(Math.random() * 9999), title} 
-      , ...books
-    ]
+  const createBooks = async (title) =>{
+    const response = await axios.post('http://localhost:3001/books', {
+      title
+    })
+    const addBooks = [response.data ,...books]
     setBooks(addBooks)
   }
   // function for remove book
