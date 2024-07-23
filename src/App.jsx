@@ -20,19 +20,19 @@ const App = () => {
     setBooks(rmBooks)
   }
 
-  // //
-  // const modifyBooks = (id, newTitle) => {
-  //   const changeBooks = books.map((title) => {
-  //     if (title.id == id) {
-  //       return {...title, title: newTitle}
-  //     }
-  //     return title
-  //   })
-  //   setBooks(changeBooks)
-  // }
+  // function to edit the title of the book
+  const modifyBooks = (id, newTitle) => {
+    const changeBooks = books.map((title) => {
+      if (title.id == id) {
+        return {...title, title: newTitle}
+      }
+      return title
+    })
+    setBooks(changeBooks)
+  }
   return (
     <div>
-      <BookList books={books} onDelete={removeBooks}/>
+      <BookList books={books} onDelete={removeBooks} onEdit={modifyBooks}/>
       <BookCreate onCreate={createBooks}/>
     </div>
   )
