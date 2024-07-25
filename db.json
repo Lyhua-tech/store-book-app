@@ -1,20 +1,3 @@
 {
-  "books": [
-    {
-      "title": "uki uki",
-      "id": 1
-    },
-    {
-      "title": "afklakfa",
-      "id": 2
-    },
-    {
-      "title": "haflafla",
-      "id": 3
-    },
-    {
-      "title": "ahfkafhalfa",
-      "id": 4
-    }
-  ]
+  "books": []
 }

@@ -1,15 +1,16 @@
 import React, { useState } from 'react'
+import useBookCreate from '../hooks/useBookCreate';
 
 const BookEdit = ({ book, onSubmit}) => {
   const [title, setTitle] = useState(book.title);
-
+  const { modifyBooks } = useBookCreate();
   const handleChange = (event) => {
     setTitle(event.target.value);
   }
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    onSubmit(book.id, title)
+    modifyBooks(book.id, title)
+    onSubmit()
   }
   return (
     <form className='book-edit' onSubmit={handleSubmit}>

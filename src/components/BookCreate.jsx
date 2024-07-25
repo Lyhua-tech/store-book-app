@@ -1,14 +1,15 @@
-import {React, useState} from 'react';
+import {React, useState } from 'react';
+import useBookCreate from '../hooks/useBookCreate';
 
-const BookCreate = ({ onCreate }) => {
+const BookCreate = () => {
   const [title, setTitle] = useState('');
-
+  const { createBooks } = useBookCreate();
   const handleChange = (event) => {
     setTitle(event.target.value);
   }
   const handleSubmit = (event) => {
     event.preventDefault();
-    onCreate(title)
+    createBooks(title)
     setTitle('')
   }
   return (
